@@ -1,1 +1,20 @@
+name: Initialize Geode
 
+on: [push]
+
+jobs:
+  Initialize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Geode
+        run: |
+        git clone https://github.com/geode-sdk/cli.git
+        git clone https://github.com/geode-sdk/sdk.git
+        cd cli
+        cmake ..
+        make
+        
