@@ -1,0 +1,54 @@
+name: Build and Install Geode SDK
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # or 'windows-latest' for Windows
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y git cmake ninja-build python3-pip
+
+      - name: Install Python dependencies
+        run: |
+          pip3 install -r requirements.txt
+
+      - name: Clone Geode CLI repository
+        run: |
+          git clone https://github.com/geode-sdk/cli.git
+          cd cli
+          # If there's a build step, add it here. Otherwise, move to the installation step.
+
+      - name: Build Geode CLI
+        run: |
+          cd cli
+          mkdir build
+          cd build
+          cmake -G Ninja ..
+          ninja
+
+      - name: Install Geode CLI
+        run: |
+          sudo cp cli/build/geode /usr/local/bin/
+
+      - name: Verify Geode CLI Installation
+        run: |
+          geode --version
+
+      - name: Run Tests (if applicable)
+        run: |
+          # Add commands to run your tests here, if applicable
