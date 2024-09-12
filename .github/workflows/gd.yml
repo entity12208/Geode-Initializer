@@ -13,28 +13,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.x'
-
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y git cmake ninja-build python3-pip
+          sudo apt-get install -y git cmake ninja-build
 
       - name: Clone Geode CLI repository
         run: |
           git clone https://github.com/geode-sdk/cli.git
-          cd cli
-          # If there's a build step, add it here. Otherwise, move to the installation step.
 
       - name: Build Geode CLI
         run: |
           cd cli
           mkdir build
           cd build
-          cmake -G Ninja ..
+          cmake ..
           ninja
 
       - name: Install Geode CLI
@@ -44,4 +37,3 @@ jobs:
       - name: Verify Geode CLI Installation
         run: |
           geode --version
-
