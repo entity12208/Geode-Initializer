@@ -1,12 +1,12 @@
-# CMakeLists.txt
-
 cmake_minimum_required(VERSION 3.10)
 
-# Set the project name
-project(Geode-Initializer)
+# Set the target platform
 set(GEODE_TARGET_PLATFORM "windows")
-# Add your executable
-# add_executable(Geode-Init main.cpp)
 
-# Add any additional CMake commands below
+# Include necessary files
+include(cmake/PlatformDetect.cmake)
+include(cmake/Platform.cmake)
+
+# Project configuration
+project(GeodeSDK)
 
