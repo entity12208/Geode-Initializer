@@ -24,7 +24,7 @@ runs:
         # Build the Geode SDK
         mkdir build
         cd build
-        cmake -G Ninja ..
+        cmake -G "Ninja" -DGEODE_TARGET_PLATFORM=windows ..
         ninja
 
         # Install the Geode CLI
