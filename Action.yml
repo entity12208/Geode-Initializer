@@ -1,20 +1,17 @@
-name: Initialize Geode
+name: "Initialize Geode"
+description: "A GitHub Action to initialize the Geode environment"
+author: "Your Name"
+inputs: {}
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-on: [push]
-
-jobs:
-  Initialize:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Setup Geode
-        run: |
+    - name: Setup Geode
+      run: |
         git clone https://github.com/geode-sdk/cli.git
         git clone https://github.com/geode-sdk/sdk.git
         cd cli
         cmake ..
         make
-        
