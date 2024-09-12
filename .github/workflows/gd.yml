@@ -23,10 +23,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y git cmake ninja-build python3-pip
 
-      - name: Install Python dependencies
-        run: |
-          pip3 install -r requirements.txt
-
       - name: Clone Geode CLI repository
         run: |
           git clone https://github.com/geode-sdk/cli.git
@@ -49,6 +45,3 @@ jobs:
         run: |
           geode --version
 
-      - name: Run Tests (if applicable)
-        run: |
-          # Add commands to run your tests here, if applicable
