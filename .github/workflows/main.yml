@@ -11,4 +11,4 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Use Geode Initializer
-        uses: entity12208/Geode-Initializer@v1.0.0
+        uses: entity12208/Geode-Initializer@main
