@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 
 # Set the project name
 project(Geode-Initializer)
-
+set(GEODE_TARGET_PLATFORM "windows")
 # Add your executable
 # add_executable(Geode-Init main.cpp)
 
