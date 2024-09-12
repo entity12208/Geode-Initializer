@@ -1,0 +1,14 @@
+name: Initialize Geode
+
+on: [push]
+
+jobs:
+  initialize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        
+      - name: Use Geode Initializer
+        uses: entity12208/Geode-Initializer@main
