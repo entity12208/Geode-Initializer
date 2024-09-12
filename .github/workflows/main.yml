@@ -1,0 +1,11 @@
+name: Test Geode Initializer
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use Geode Initializer
+        uses: ./
