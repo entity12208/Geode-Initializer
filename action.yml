@@ -9,7 +9,8 @@ runs:
   steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-
+      shell: bash
+      
     - name: Update Dependancies
       run: |
         sudo apt update
