@@ -1,6 +1,6 @@
 name: "Initialize Geode"
 description: "A GitHub Action to initialize the Geode environment"
-author: "Your Name"
+author: "Entity12208"
 icon: "activity"
 color: "gray-dark"
 inputs: {}
@@ -25,7 +25,7 @@ runs:
         # Build the Geode SDK
         mkdir build
         cd build
-        cmake -G "Ninja" -DGEODE_TARGET_PLATFORM=windows ..
+        cmake -G "Ninja" -DGEODE_TARGET_PLATFORM=Win64 ..
         ninja
 
         # Install the Geode CLI
