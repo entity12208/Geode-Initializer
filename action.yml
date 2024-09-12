@@ -12,9 +12,27 @@ runs:
 
     - name: Setup Geode
       run: |
-        git clone https://github.com/geode-sdk/cli.git
-        git clone https://github.com/geode-sdk/sdk.git
-        cd cli
-        cmake ..
-        make
+        # Update and install dependencies
+        sudo apt update
+        sudo apt install git cmake ninja-build python3 python3-pip
+
+        # Clone the Geode SDK repository
+        git clone https://github.com/geode-sdk/geode.git
+        cd geode
+
+        # Install Python dependencies
+        pip3 install -r requirements.txt
+
+        # Build the Geode SDK
+        mkdir build
+        cd build
+        cmake -G Ninja ..
+        ninja
+
+        # Install the Geode CLI
+        sudo cp geode /usr/local/bin/
+
+        # Verify the installation
+        geode --version
+
       shell: bash
