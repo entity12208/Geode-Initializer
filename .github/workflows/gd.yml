@@ -18,18 +18,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y git cmake ninja-build
 
-      - name: Clone Geode CLI repository
-        run: |
-          git clone https://github.com/geode-sdk/cli.git
-
       - name: Build Geode CLI
         run: |
-          cd cli
-          mkdir build
+          mkdir -p build
           cd build
           cmake ..
           ninja
-
+          
       - name: Install Geode CLI
         run: |
           sudo cp cli/build/geode /usr/local/bin/
@@ -37,3 +32,7 @@ jobs:
       - name: Verify Geode CLI Installation
         run: |
           geode --version
+
+      - name: Run Tests (if applicable)
+        run: |
+          # Add commands to run your tests here, if applicable
