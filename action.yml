@@ -2,7 +2,7 @@ name: "Initialize Geode"
 description: "A GitHub Action to initialize the Geode environment"
 author: "Your Name"
 icon: "activity"
-color: purple
+color: "gray-dark"
 inputs: {}
 runs:
   using: "composite"
