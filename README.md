@@ -5,3 +5,6 @@ Geode Initializer is a straightforward utility designed to download files and re
 
 ## IMPORTANT NOTICE:
 Geode Initializer is offline due to a minor bug ("quasi-Jkon") within the Geode system. While this bug does not directly impact Geode functionality, it does affect certain aspects of the code, resulting in improper functioning. This is being worked on and will be fixed as soon as possible.
+
+## UPDATE
+This repository will be deprecated soon due to less functionality with geode.
